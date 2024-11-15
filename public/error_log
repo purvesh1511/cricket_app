@@ -1,0 +1,1 @@
+[24-Oct-2024 19:47:45 Asia/Kolkata] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Mail as Mail because the name is already in use in /home/cricademia/public_html/app/Http/Controllers/OrderController.php on line 21
