@@ -100,16 +100,18 @@ h1 span {
             @endphp
             @if($achivement->image)
             <div class="card" style="display:<?php echo $display;?>">
-                <div class="row">
+                <div class="row g-0">
                     <div class="col-lg-4 featured_image" >
-                        <div class="image-block">
+                        <div class="image-block h-100">
                         <img src="{{asset('page_image')}}/{{$achivement->image}}">
                     </div>
                     </div>
-                    <div class="col-lg-8 p-5 p-s-0">
-                        <h2>{{$achivement->heading}}</h2>
-                        {!! $achivement->description !!}
+                    <div class="col-lg-8 d-flex align-items-center p-5 p-s-0">
+                        <div>
+                            <h2 class="card-title">{{$achivement->heading}}</h2>
+                            <p class="card-text">{!! $achivement->description !!}</p>
                         </div>
+                    </div>
                     
                 </div>
             </div>
