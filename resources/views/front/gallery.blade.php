@@ -129,6 +129,9 @@ $title = 'Gallery';
     display: flex;
     margin-left: 9px;
   }
+  .gal .card img{
+    border: 0px solid #fb6500 !important;
+  }
 </style>
 <div class="event-title">
   <div class="main-title " id="cm-title">
@@ -172,14 +175,14 @@ $title = 'Gallery';
 
         <div class="col-lg-4 col-12 gal">
           <a href="{{route('gallery-details')}}?category_id={{$gal_category->id}}">
-            <div class="card m-1 p-3">
+            <div class="card m-1 p-0">
               <div class="position-relative">
                 <img src="{{asset('page_image')}}/{{$gal_category->image}}" class="img-fluid" alt="..." style="height: 245px;" width="100%">
                 <span class="d-flex gal-counter position-absolute ">
                   <img class="border-0" src="https://web.cricademia.com/public/page_image/1722426936gallery-icon.png" width="57%" style="border: 0px !important;" />
                   {{$categoryImgCount}} </span>
               </div>
-              <div class="card-body p-0 py-3 pb-0">
+              <div class="card-body p-0 py-3 p-3">
                 <h5 class="card-title">{{$gal_category->heading}}</h5>
               </div>
           </a>
