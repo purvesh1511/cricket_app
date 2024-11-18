@@ -17,8 +17,13 @@ use Illuminate\Support\Str;
 class FrontController extends Controller
 {
     public function home() {
-        
-        $whoweare                 =CMS::where('id',34)->get();
+        $site_mode_exists = \App\Models\Option::where('option_name', 'site_mode')->first()->option_value;
+        if($site_mode_exists) {
+            return view('front.maintance'); 
+        } 
+
+
+        $whoweare     =CMS::where('id',34)->get();
         $cricademia_achievements  =DB::table('achievements')->where('status',1)->orderBy('sort_order','ASC')->get();
         //echo "<pre>"; print_r($whoweare);
         

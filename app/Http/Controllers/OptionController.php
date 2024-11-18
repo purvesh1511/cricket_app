@@ -102,6 +102,13 @@ class OptionController extends Controller
             }else {
                 $from_email = '';
             }
+
+            $from_email_exists = Option::where('option_name','site_mode')->exists();
+            if($from_email_exists) {
+                $site_mode = Option::where('option_name','site_mode')->first()->option_value;
+            }else {
+                $site_mode = '';
+            }
             
             $AdminDet=DB::table('admins')->where('id',1)->first();
             $to_email = $AdminDet->email;
@@ -130,7 +137,7 @@ class OptionController extends Controller
                 ]
             )->exists();
 
-            return view('admin.settings')->with(compact(['site_url','site_name','site_description','support_email','auto_reply_email','date_format','time_format','razorpay_api_key','razorpay_api_secret','header_code','footer_code','google_analytics_code','cash_on_delivery_exists','online_payment_exists','banner_image','from_email','to_email']));
+            return view('admin.settings')->with(compact(['site_url','site_name','site_description','support_email','auto_reply_email','date_format','time_format','razorpay_api_key','razorpay_api_secret','header_code','footer_code','google_analytics_code','cash_on_delivery_exists','online_payment_exists','banner_image','from_email','to_email','site_mode']));
         }else {
             return view('admin.login');
         }
@@ -390,6 +397,26 @@ class OptionController extends Controller
                 );
             }
         }
+
+        // if($request->has('site_mode') && $request->site_mode != null) {
+            $site_mode = $request->site_mode ?? 0;
+            Option::updateOrCreate(
+                [
+                    'option_name' => 'site_mode'
+                ],
+                [
+                    'option_name' => 'site_mode',
+                    'option_value' => $site_mode
+                ]
+            );
+        // }else {
+        //     Option::where(
+        //         [
+        //             'option_name' => 'site_mode'
+        //         ]
+        //     )->delete();
+        // }
+        // dd($request->all());
 
      /*   if($request->has('razorpay_api_key') && $request->razorpay_api_key != null) {
             $razorpay_api_key = $request->razorpay_api_key;

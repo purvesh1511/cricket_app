@@ -163,6 +163,21 @@
                                         </label>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="row mb-3">
+                                <h6>Maintenance</h6>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input primary" type="checkbox"
+                                            value="1" name="site_mode" id="site_mode"
+                                            {{ $site_mode ? 'checked' : '' }}>
+                                        <label class="form-check-label text-dark" for="site_mode">
+                                            Active
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="text-start mt-4">
                                 <button type="submit" class="btn btn-primary btn-lg font-medium rounded-pill px-4">
