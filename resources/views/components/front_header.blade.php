@@ -59,7 +59,7 @@
                     <li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{url('/')}}/book-a-lane?date=<?php echo date('Y-m-d');?>">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="/events">Events</a>  </li>
-                    <li class="nav-item"><a class="nav-link" href="/our-communities">Our Communities</a>  </li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="/our-communities">Our Communities</a>  </li> -->
                      <li class="nav-item"><a class="nav-link" href="match-schedule">Fixtures</a>  </li>
                     <li class="nav-item"><a class="nav-link" href="https://arccricket.com/" target="_blank">Cricket Shop</a>  </li>
                     <!--<li class="nav-item"><a class="nav-link" href="/elites&c">Elite S&C</a>  </li>-->

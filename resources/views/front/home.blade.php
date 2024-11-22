@@ -373,6 +373,40 @@ h1 span {
         </div>
     </div>
 </section>
+<section class="gallerycatagory mb-5" id="gal-cat">
+    <div class="event-title">
+    <div class="main-title " id="cm-title">
+        <h4><span>GALLERY</span></h4>
+        <div class="horizental-line"></div>
+    </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        @if($gallery_category)
+        @foreach($gallery_category as $gal_category)
+        <?php
+        $categoryImgCount = DB::table('media')->where('category_id', $gal_category->id)->count();
+        ?>
+        <div class="col-lg-4 col-12 gal">
+          <a href="{{route('gallery-details')}}?category_id={{$gal_category->id}}">
+            <div class="card m-1 p-0">
+              <div class="position-relative">
+                <img src="{{asset('page_image')}}/{{$gal_category->image}}" class="img-fluid img-cover" alt="..." style="height: 245px;" width="100%">
+                <span class="d-flex gal-counter position-absolute ">
+                  <img class="border-0" src="https://web.cricademia.com/public/page_image/1722426936gallery-icon.png" width="57%" style="border: 0px !important;" />
+                  {{$categoryImgCount}} </span>
+              </div>
+              <div class="card-body p-0 py-3 p-3">
+                <h5 class="card-title">{{$gal_category->heading}}</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        @endforeach
+        @endif
+      </div>
+    </div>
+  </section>
 <script>
     let slideIndex = 0;
     const slideContainer = document.querySelector('.slide-container');

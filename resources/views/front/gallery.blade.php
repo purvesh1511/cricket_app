@@ -129,8 +129,13 @@ $title = 'Gallery';
     display: flex;
     margin-left: 9px;
   }
-  .gal .card img{
+
+  .gal .card img {
     border: 0px solid #fb6500 !important;
+  }
+
+  .img-cover {
+    object-fit: cover;
   }
 </style>
 <div class="event-title">
@@ -172,12 +177,11 @@ $title = 'Gallery';
         <?php
         $categoryImgCount = DB::table('media')->where('category_id', $gal_category->id)->count();
         ?>
-
         <div class="col-lg-4 col-12 gal">
           <a href="{{route('gallery-details')}}?category_id={{$gal_category->id}}">
             <div class="card m-1 p-0">
               <div class="position-relative">
-                <img src="{{asset('page_image')}}/{{$gal_category->image}}" class="img-fluid" alt="..." style="height: 245px;" width="100%">
+                <img src="{{asset('page_image')}}/{{$gal_category->image}}" class="img-fluid img-cover" alt="..." style="height: 245px;" width="100%">
                 <span class="d-flex gal-counter position-absolute ">
                   <img class="border-0" src="https://web.cricademia.com/public/page_image/1722426936gallery-icon.png" width="57%" style="border: 0px !important;" />
                   {{$categoryImgCount}} </span>
@@ -185,35 +189,27 @@ $title = 'Gallery';
               <div class="card-body p-0 py-3 p-3">
                 <h5 class="card-title">{{$gal_category->heading}}</h5>
               </div>
+            </div>
           </a>
         </div>
+        @endforeach
+        @endif
       </div>
-
-      @endforeach
-      @endif
-
-
-
-
-
-
     </div>
-</div>
+  </section>
 
-</section>
-
-<div class="modal lightbox-modal" id="lightbox-modal" tabindex="-1">
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content">
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      <div class="modal-body">
-        <div class="container-fluid p-0">
-          <!-- JS content here -->
+  <div class="modal lightbox-modal" id="lightbox-modal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body">
+          <div class="container-fluid p-0">
+            <!-- JS content here -->
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
 </div>

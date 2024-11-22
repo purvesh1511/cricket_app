@@ -19,7 +19,8 @@ class FrontController extends Controller
     public function home() {
         $whoweare = CMS::where('id',34)->get();
         $cricademia_achievements  = DB::table('achievements')->where('status',1)->orderBy('sort_order','ASC')->get();
-        return view('front.home',compact('whoweare','cricademia_achievements'));     
+        $gallery_category= DB::table('gallery_category')->orderBy('sort_order','ASC')->get();
+        return view('front.home',compact('whoweare','cricademia_achievements','gallery_category'));     
     }
     
     public function lane(Request $request){

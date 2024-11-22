@@ -24,7 +24,7 @@
     </div>
 </div>
 <div class="w-50 m-auto text-center" id="description" style="margin-bottom:85px!important;">
-    Here I want to be able to add all the events cricademia runs such as up and coming camps as well as fixtures. If possible I'd like there to be a filter section on this page so people can filter by date or the club they play at
+    <!-- Here I want to be able to add all the events cricademia runs such as up and coming camps as well as fixtures. If possible I'd like there to be a filter section on this page so people can filter by date or the club they play at -->
 </div>
 
 <div class="container">
@@ -49,7 +49,7 @@
         <h3>{{$events->event_name}}</h3>
         {!! substr($events->event_descrption,0,150) !!}<br>
         
-       <h3>Total Capacity : <b>{{$events->event_no_of_person}}</b></h3>
+       <h3>Capacity : <b>{{$events->event_no_of_person}}</b></h3>
        <h3>Available : <b>{{$availableEvent}}</b></h3>
     
     </div>
