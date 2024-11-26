@@ -167,7 +167,7 @@
                         <span class="d-flex">
                             <i class="fa fa-id-card-o"></i>
                         </span>
-                        <span class="hide-menu">Camp</span>
+                        <span class="hide-menu">Event</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
@@ -175,7 +175,7 @@
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-circle"></i>
                                 </div>
-                                <span class="hide-menu">Add Camp</span>
+                                <span class="hide-menu">Add Event</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -183,7 +183,7 @@
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-circle"></i>
                                 </div>
-                                <span class="hide-menu">All Camp</span>
+                                <span class="hide-menu">All Event</span>
                             </a>
                         </li>
                     </ul>

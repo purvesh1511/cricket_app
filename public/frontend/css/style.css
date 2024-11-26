@@ -243,6 +243,7 @@ div#cm-title {
 .gal .card img {
     border: 2px solid #fb6500 !important;
     border-radius: 6px;
+    object-fit: cover;
 }
 div#Communities .horizental-line {
     width: 37% ;
